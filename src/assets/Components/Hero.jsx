@@ -76,33 +76,25 @@ function Hero() {
         </div>
       </div>
     </section>
-    <section>
-      <h1 className=" flex items-center justify-around text-3xl font-bold text-green-900">services</h1>
-      <div className="flex flex-cols font-bold text-green-900 justify-between p-5 ">
-      <div className="bg-white w-6em h-100px rounded-2xl shadow-lg p-4">
-        
-       <h1> English service</h1>
-       <p> 8:30AM-10:30AM </p>
-        
+    <section id="services" className="bg-gray-50 py-16">
+      <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-10">
+        <h2 className="mb-10 text-center text-3xl font-bold text-green-900">
+          Services
+        </h2>
+
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {services.map((service) => (
+            <div
+              key={service.name}
+              className="rounded-2xl bg-white p-6 shadow-lg shadow-green-100 ring-1 ring-green-100"
+            >
+              <h3 className="mb-3 text-xl font-semibold text-green-900">
+                {service.name}
+              </h3>
+              <p className="text-gray-700">{service.description}</p>
+            </div>
+          ))}
         </div>
-         <div className="bg-white w-6em h-100px rounded-2xl shadow-lg p-4">
-        
-       <h1> Kiswahili service</h1>
-       <p> 11:30AM-12:30AM </p>
-        
-        </div> <div className="bg-white w-6em h-100px rounded-2xl shadow-lg p-4">
-        
-       <h1> Youth service</h1>
-       <p> 9:30AM-10:30AM</p>
-        
-        </div>
-         <div className="bg-white w-6em h-100px rounded-2xl shadow-lg p-4">
-        
-       <h1> Sunday School</h1>
-       <p> 9:30AM-10:30AM</p>
-        
-        </div>
-     
       </div>
     </section>
     
