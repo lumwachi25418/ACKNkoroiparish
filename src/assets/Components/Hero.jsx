@@ -1,5 +1,6 @@
 import React from "react";
 import churchphoto from "../Images/churchphoto.jpeg";
+import mu from "../Images/mu.jpeg";
 
 function Hero() {
   const services=[
@@ -55,7 +56,7 @@ function Hero() {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="#about"
+              href="/about"
               className="rounded-lg bg-green-800 px-7 py-4 font-semibold text-white shadow-md transition hover:bg-green-900"
             >
               Discover Our Parish →
@@ -86,7 +87,7 @@ function Hero() {
           {services.map((service) => (
             <div
               key={service.name}
-              className="rounded-2xl bg-white p-6 shadow-lg shadow-green-100 ring-1 ring-green-100"
+              className="rounded-2xl bg-white p-6 shadow-lg shadow-gray-100 ring-1 ring-gray-100"
             >
               <h3 className="mb-3 text-xl font-semibold text-green-900">
                 {service.name}
@@ -96,7 +97,16 @@ function Hero() {
           ))}
         </div>
       </div>
+      <div>
+      
+
+      </div>
     </section>
+      <section classNAme='w-fit h-fit bg-gray-50 py-16'>
+        <h1 className="flex justify-center ">Gallery</h1>
+        <img src={mu} alt="mu" className="mx-auto mt-4 rounded-lg shadow-lg" />
+        
+</section>
     
     </>
 

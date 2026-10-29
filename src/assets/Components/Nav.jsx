@@ -12,7 +12,7 @@ const navLinks = [
 const ministries = [
   { name: "Children Ministry", path: "/ministries/children" },
   { name: "Youth Ministry", path: "/ministries/youth" },
-  { name: "Mothers Union Ministry", path: "/ministries/mothers-union" },
+  { name: "Mothers Union Ministry", path: "/ministries/mothers" },
   { name: "KAMA Ministry", path: "/ministries/kama" },
 ];
 
