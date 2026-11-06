@@ -1,8 +1,33 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import churchphoto from "../Images/churchphoto.jpeg";
 import mu from "../Images/mu.jpeg";
+import img1 from '../Images/choir1.jpeg'; 
+import img2 from '../Images/choir2.jpeg'; 
+import img3 from '../Images/choir3.jpeg';
+import img4 from '../Images/congregation.jpeg';
+
 
 function Hero() {
+  const galleryImages = [img1, img2, img3, img4]; // Array of gallery images
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % galleryImages.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+  const nextImage = () => {
+    setCurrentImage((prevImage) => (prevImage + 1) % galleryImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage(
+      (prevImage) => (prevImage - 1 + galleryImages.length) % galleryImages.length
+    );
+  };
   const services=[
     {
       name: "English Service",
@@ -102,10 +127,19 @@ function Hero() {
 
       </div>
     </section>
-      <section classNAme='w-fit h-fit bg-gray-50 py-16'>
+      <section className='w-full bg-gray-50 py-16'>
         <h1 className="flex justify-center ">Gallery</h1>
-        <img src={mu} alt="mu" className="mx-auto mt-4 rounded-lg shadow-lg" />
-        
+    <div id="gallery" className="relative w-full overflow-hidden" style={{ height: "700px" }}>
+
+  {galleryImages.map((image, index) => (
+    <img
+      key={index}
+      src={image}
+      alt={`Gallery ${index + 1}`}
+      className={`h-full w-full object-cover ${index === currentImage ? 'block' : 'hidden'}`}
+    />
+  ))} 
+  </div>        
 </section>
     
     </>
