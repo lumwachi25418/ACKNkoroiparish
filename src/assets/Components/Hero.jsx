@@ -129,7 +129,7 @@ function Hero() {
     </section>
       <section className='w-full bg-gray-50 py-16'>
         <h1 className="flex justify-center ">Gallery</h1>
-    <div id="gallery" className="relative w-full overflow-hidden" style={{ height: "700px" }}>
+    <div id="gallery" className="relative h-[320px] w-full overflow-hidden sm:h-[420px] md:h-[560px] lg:h-[700px]">
 
   {galleryImages.map((image, index) => (
     <img
